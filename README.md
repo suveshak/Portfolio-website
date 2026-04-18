@@ -2,16 +2,17 @@
 
 # ✦ Suvesha Khan ✦
 
-
-[![Portfolio](https://img.shields.io/badge/🌐_Live_Portfolio-black?style=for-the-badge)](https://suveshak.github.io)
+[![Portfolio](https://img.shields.io/badge/🌐_Live_Portfolio-black?style=for-the-badge)](https://portfolio-website-gjmd.vercel.app/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/suveshakhan)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/suveshak)
+
+🔗 **Live Site: [portfolio-website-gjmd.vercel.app](https://portfolio-website-gjmd.vercel.app/)**
 
 </div>
 
 ---
 
-##  About This Project
+## About This Project
 
 A sleek, responsive personal portfolio website showcasing my projects, skills, and experience. Built with modern web technologies for a fast and smooth user experience.
 
