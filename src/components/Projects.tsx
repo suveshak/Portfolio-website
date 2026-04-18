@@ -28,6 +28,15 @@ const projects = [
     gradient: "from-burgundy-light to-primary",
     github: "https://github.com/suveshak/BRAIN-TUMOUR-DETECTION",
   },
+  {
+    title: "Personal Portfolio Website",
+    description: "A sleek, responsive portfolio website built with React and TypeScript to showcase my projects, skills, and experience.",
+    fullDescription: "A modern personal portfolio website designed to present my work and skills in a clean, professional manner. Built with React, TypeScript, Vite, and Tailwind CSS, it features smooth animations, a responsive layout across all devices, an interactive projects section, and a contact form. Deployed live on Vercel for fast, reliable hosting.",
+    tags: ["React", "TypeScript", "Tailwind CSS"],
+    gradient: "from-primary to-burgundy-light",
+    github: "https://github.com/suveshak/Portfolio-website",
+    live: "https://portfolio-website-gjmd.vercel.app/",
+  },
 ];
 
 const Projects = () => {
