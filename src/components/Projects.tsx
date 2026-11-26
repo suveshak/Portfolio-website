@@ -29,6 +29,14 @@ const projects = [
     github: "https://github.com/suveshak/bazaar-fullstack",
   },
   {
+    title: "TripSync - AI Travel Planner",
+    description: "A travel planning application designed to help users organise trips with AI-assisted planning and travel API integrations.",
+    fullDescription: "TripSync is a travel planning project built with Next.js and a Node.js/Express backend. It explores AI-agent-assisted trip planning and integrations with travel APIs to help organise travel information and itinerary workflows.",
+    tags: ["Next.js", "Node.js", "Express.js", "AI Agents", "Travel APIs"],
+    gradient: "from-burgundy-light to-primary",
+    github: "https://github.com/suveshak/tripsync",
+  },
+  {
     title: "Student Mental Health Analysis",
     description: "An interactive Power BI dashboard exploring patterns linked to academic pressure, financial stress, sleep, and student well-being.",
     fullDescription: "This data analytics project explores a dataset of 27,901 student records to understand patterns associated with student mental health. The Power BI dashboard includes KPIs, degree-level filtering, and comparisons across academic pressure, financial stress, sleep duration, family history, and gender. The analysis highlights associations in the data and does not claim to establish causation.",
