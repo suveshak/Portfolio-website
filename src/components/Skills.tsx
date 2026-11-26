@@ -60,7 +60,7 @@ const Skills = () => {
                 {group.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="px-3 py-2 rounded-lg bg-primary text-primary-foreground border border-primary/80 text-sm font-medium shadow-sm"
+                    className="px-3 py-2 rounded-lg bg-primary text-white border border-primary/80 text-sm font-medium shadow-sm"
                   >
                     {skill}
                   </span>
