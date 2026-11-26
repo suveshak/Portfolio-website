@@ -8,7 +8,7 @@ const skillGroups = [
   },
   {
     category: "Frontend Development",
-    skills: ["HTML", "CSS", "JavaScript", "React", "Next.js", "Tailwind CSS"],
+    skills: ["HTML", "CSS", "JavaScript", "React"],
   },
   {
     category: "Backend & Databases",
