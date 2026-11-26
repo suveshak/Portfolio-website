@@ -1,50 +1,37 @@
 import { motion } from "framer-motion";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
-const skills = [
-  { name: "Python", prominent: true },
-  { name: "Power BI", prominent: true },
-  { name: "HTML", prominent: false },
-  { name: "React", prominent: true },
-  { name: "CSS", prominent: false },
-  { name: "JavaScript", prominent: true },
-  { name: "WordPress", prominent: false },
-  { name: "SQL", prominent: true },
-  { name: "Excel", prominent: true },
-  { name: "Next.js", prominent: true },
-  { name: "Node.js", prominent: false },
-  { name: "Docker", prominent: true },
-  { name: "CI/CD", prominent: true },
-  { name: "Git", prominent: true },
-  { name: "Canva", prominent: false },
-  { name: "TensorFlow", prominent: true },
-  { name: "AI/ML", prominent: true },
-  { name: "Generative AI", prominent: true },
-  { name: "PyTorch", prominent: false },
-  { name: "Tailwind CSS", prominent: false },
+const skillGroups = [
+  {
+    category: "Data & Business Intelligence",
+    skills: ["Python", "SQL", "Excel", "Power BI", "Pandas", "NumPy", "Matplotlib"],
+  },
+  {
+    category: "Frontend Development",
+    skills: ["HTML", "CSS", "JavaScript", "React", "Next.js", "Tailwind CSS"],
+  },
+  {
+    category: "Backend & Databases",
+    skills: ["Node.js", "Express.js", "PostgreSQL", "SQLite", "Firebase"],
+  },
+  {
+    category: "AI & Machine Learning",
+    skills: ["Scikit-learn", "TensorFlow", "PyTorch", "Keras", "YOLOv8", "LLaMA", "Gemini API", "ChromaDB"],
+  },
+  {
+    category: "Tools & Platforms",
+    skills: ["Git", "GitHub", "Docker", "Streamlit", "WordPress", "Canva", "VS Code"],
+  },
 ];
-
-const SkillCard = ({ name, prominent }: { name: string; prominent: boolean }) => (
-  <div
-    className={`flex-shrink-0 px-8 py-4 rounded-xl border-2 transition-all duration-300 ${
-      prominent
-        ? "bg-primary/10 border-primary/40 text-foreground font-semibold scale-110 shadow-lg shadow-primary/10"
-        : "bg-card border-border/60 text-muted-foreground hover:border-primary/40 hover:text-foreground hover:bg-card/80"
-    }`}
-  >
-    <span className="text-lg whitespace-nowrap">{name}</span>
-  </div>
-);
 
 const Skills = () => {
   const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
-  const duplicatedSkills = [...skills, ...skills];
 
   return (
-    <section id="skills" className="py-32 overflow-hidden" ref={ref}>
-      <div className="container max-w-5xl mx-auto px-6 mb-16">
+    <section id="skills" className="py-28 px-6" ref={ref}>
+      <div className="container max-w-6xl mx-auto">
         <motion.div
-          className="text-center"
+          className="text-center mb-14"
           initial={{ opacity: 0, y: 30 }}
           animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
@@ -53,32 +40,36 @@ const Skills = () => {
             Skills & Technologies
           </h2>
           <p className="text-muted-foreground text-sm tracking-widest uppercase">
-            Expertise
+            Technologies I’ve worked with
           </p>
         </motion.div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {skillGroups.map((group, index) => (
+            <motion.div
+              key={group.category}
+              initial={{ opacity: 0, y: 24 }}
+              animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
+              transition={{ duration: 0.5, delay: index * 0.08 }}
+              className="rounded-2xl border border-border/60 bg-card p-6 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300"
+            >
+              <h3 className="text-sm font-semibold tracking-wide text-primary mb-5">
+                {group.category}
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {group.skills.map((skill) => (
+                  <span
+                    key={skill}
+                    className="px-3 py-2 rounded-lg bg-secondary/80 border border-border/50 text-sm text-foreground/90"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
-
-      <motion.div
-        className="relative py-4"
-        initial={{ opacity: 0 }}
-        animate={isVisible ? { opacity: 1 } : { opacity: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-      >
-        <div className="absolute left-0 top-0 bottom-0 w-40 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-40 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
-
-        <div className="flex gap-8 mb-8 animate-marquee hover:[animation-play-state:paused]">
-          {duplicatedSkills.map((skill, index) => (
-            <SkillCard key={`row1-${index}`} name={skill.name} prominent={skill.prominent} />
-          ))}
-        </div>
-
-        <div className="flex gap-8 animate-marquee-reverse hover:[animation-play-state:paused]">
-          {[...duplicatedSkills].reverse().map((skill, index) => (
-            <SkillCard key={`row2-${index}`} name={skill.name} prominent={skill.prominent} />
-          ))}
-        </div>
-      </motion.div>
     </section>
   );
 };
