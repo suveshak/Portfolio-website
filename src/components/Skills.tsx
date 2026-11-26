@@ -51,16 +51,16 @@ const Skills = () => {
               initial={{ opacity: 0, y: 24 }}
               animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
               transition={{ duration: 0.5, delay: index * 0.08 }}
-              className="rounded-2xl border border-border/60 bg-card p-6 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300"
+              className="rounded-2xl border border-primary bg-primary p-6 shadow-lg shadow-primary/10 transition-all duration-300"
             >
-              <h3 className="text-sm font-semibold tracking-wide text-primary mb-5">
+              <h3 className="text-sm font-semibold tracking-wide text-white mb-5">
                 {group.category}
               </h3>
               <div className="flex flex-wrap gap-2">
                 {group.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="px-3 py-2 rounded-lg bg-primary text-white border border-primary/80 text-sm font-medium shadow-sm"
+                    className="px-3 py-2 rounded-lg bg-white text-primary border border-white/80 text-sm font-medium shadow-sm"
                   >
                     {skill}
                   </span>
